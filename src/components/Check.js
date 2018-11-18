@@ -76,7 +76,7 @@ class Check extends React.Component {
                         <Text style={btnTextStyle}>Add a measure</Text>
                     </Button>
                 </View>
-                <Text style={titleStyle}>Mean kcal per meal)</Text>
+                <Text style={titleStyle}>Mean kcal per meal</Text>
                 <BarChart
                     data={carbs}
                     width={Dimensions.get('window').width}
