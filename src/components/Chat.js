@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { GiftedChat } from 'react-native-gifted-chat'
+import messages from '../../data/messages';
 
 class Chat extends React.Component {
 
@@ -10,7 +12,12 @@ class Chat extends React.Component {
         };
         return (
             <View style={containerStyle}>
-                <Text>Chat</Text>
+                <GiftedChat
+                    messages={messages.sort((a, b) => b._id - a._id)}
+                    user={{
+                        _id: 1,
+                    }}
+                />
             </View >
         );
     }
