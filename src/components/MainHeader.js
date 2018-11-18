@@ -39,7 +39,7 @@ class MainHeader extends React.Component {
                     style={imgStyle}
                     resizeMode={'contain'}
                     source={require('../../assets/logo.png')} /></View>
-                <View style={flexStyle}><Title style={titleStyle}>{this.props.title ? this.props.title : ''}</Title></View>
+                <View style={{flex: 2}}><Title style={titleStyle}>{this.props.title ? this.props.title : ''}</Title></View>
                 <View style={flexStyle}></View>
             </Header>
         );
