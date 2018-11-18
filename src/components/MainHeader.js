@@ -8,7 +8,7 @@ class MainHeader extends React.Component {
         const headerStyle = {
             backgroundColor: 'white',
             borderBottomWidth: 1,
-            borderBottomColor: '#BDBDBD',
+            borderBottomColor: '#FF0129',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center'
@@ -16,14 +16,16 @@ class MainHeader extends React.Component {
 
         const titleStyle = {
             fontFamily: 'Roboto',
-            color: '#878787',
+            color: '#4b4b4b',
             fontSize: 18
         }
 
         return (
 
             <Header style={headerStyle}>
+                <View></View>
                 <View><Title style={titleStyle}>{this.props.title ? this.props.title : ''}</Title></View>
+                <View></View>
             </Header>
         );
     }

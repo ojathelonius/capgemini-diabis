@@ -23,18 +23,20 @@ export default createBottomTabNavigator(
                 const { routeName } = navigation.state;
 
                 const labelStyle = focused ? {
-                    fontSize: 10,
+                    fontSize: 13,
                     textAlign: 'center',
-                    color: '#FF0129'
+                    color: 'white'
                 } : {
-                        fontSize: 10,
+                        fontSize: 9,
                         textAlign: 'center',
-                        color: '#676767'
+                        color: '#eeeeee'
                     };
 
-                    const viewStyle = {
-                        justifyContent: 'center'
-                    }
+                const viewStyle = {
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: '#FF0129'
+                }
                 let iconSource;
 
                 switch (routeName) {
@@ -52,15 +54,18 @@ export default createBottomTabNavigator(
                         break;
                     case 'Chat':
                         iconSource = 'comments';
-                        break;  
+                        break;
                     default:
                         iconSource = 'home';
                 }
 
                 let iconStyle = focused ? {
-                    color: '#FF0129'
+                    fontSize: 29,
+                    color: 'white'
                 } : {
-                        color: '#676767'
+                        fontSize: 24,
+                        color: '#eeeeee',
+                        textAlign: 'center'
                     };
                 return (
                     <View style={viewStyle}>
@@ -75,8 +80,9 @@ export default createBottomTabNavigator(
                 showLabel: false,
                 style: {
                     borderTopWidth: 1,
-                    borderTopColor: 'red',
-                    height: 55
+                    borderTopColor: 'white',
+                    height: 55,
+                    backgroundColor: '#FF0129'
                 }
             },
     }
