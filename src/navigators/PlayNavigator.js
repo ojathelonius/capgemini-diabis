@@ -11,7 +11,7 @@ const PlayNavigator = createStackNavigator(
         initialRouteName: 'Play',
         defaultNavigationOptions: ({ navigation }) => {
             return ({
-                header: (props) => (navigation.state.index == undefined ? <MainHeader {...props} title='Play' /> : null)
+                header: (props) => (navigation.state.index == undefined ? <MainHeader {...props} title='Games' /> : null)
             })
         },
     }

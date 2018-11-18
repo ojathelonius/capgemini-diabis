@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
-import { List, ListItem, Form, Item, Picker, Card, CardItem, Left, Thumbnail, Body, Right, Button, Icon } from 'native-base';
+import { View, Image, ScrollView } from 'react-native';
+import { List, ListItem, Text, Form, Item, Picker, Card, CardItem, Left, Thumbnail, Body, Right, Button, Icon } from 'native-base';
 
 class Board extends React.Component {
 
@@ -36,6 +36,10 @@ class Board extends React.Component {
         const iconStyle = {
             color: '#7F5F42',
             marginRight: 8
+        }
+
+        const shareStyle = {
+            color: '#7F5F42'
         }
         return (
             <View style={containerStyle}>
@@ -92,7 +96,7 @@ class Board extends React.Component {
                                 <Left>
                                     <Button transparent>
                                         <Icon style={iconStyle} type="FontAwesome" name="facebook-f" />
-                                        <Text>Share on Facebook</Text>
+                                        <Text style={shareStyle}>Share</Text>
                                     </Button>
                                 </Left>
                                 <Body>
@@ -101,7 +105,7 @@ class Board extends React.Component {
                                 <Right>
                                     < Button transparent>
                                         <Icon style={iconStyle} type="FontAwesome" name="twitter" />
-                                        <Text>Share on Twitter</Text>
+                                        <Text style={shareStyle}>Tweet</Text>
                                     </Button>
                                 </Right>
                             </CardItem>
