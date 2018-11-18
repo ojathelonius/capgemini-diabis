@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { GiftedChat, Bubble } from 'react-native-gifted-chat'
+import { View, Text, Platform, KeyboardAvoidingView } from 'react-native';
+import { GiftedChat, Bubble, Send } from 'react-native-gifted-chat'
 import messages from '../../data/messages';
 
 class Chat extends React.Component {
@@ -18,7 +18,10 @@ class Chat extends React.Component {
                         _id: 1,
                     }}
                     renderBubble={this.renderBubble}
+                    renderSend={this.renderSend}
+                    isAnimated={true}
                 />
+                <KeyboardAvoidingView  behavior={'padding'} keyboardVerticalOffset={80}/>
             </View >
         );
     }
@@ -34,6 +37,29 @@ class Chat extends React.Component {
                 }}
             />
         )
+    }
+
+    renderSend(props) {
+
+        const sendStyle = {
+            color: '#7F5F42',
+            fontSize: 16
+        };
+
+        const viewSendStyle = {
+            marginRight: 10,
+            marginBottom: 10
+        };
+
+        return (
+            <Send
+                {...props}
+            >
+                <View style={viewSendStyle}>
+                    <Text style={sendStyle}>Send</Text>
+                </View>
+            </Send>
+        );
     }
 }
 
