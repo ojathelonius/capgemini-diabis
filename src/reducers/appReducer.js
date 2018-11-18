@@ -1,4 +1,5 @@
 const initialState = {
+    isReady: false
 }
 
 const appReducer = (state = initialState, action) => {
