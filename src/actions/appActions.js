@@ -16,7 +16,7 @@ export const loadResources = () => (async (dispatch) => {
         Roboto: require("native-base/Fonts/Roboto.ttf"),
         Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
         Arial: require("../../assets/fonts/Arial.ttf"),
-        NoTime: require("../../assets/fonts/Luna.ttf")
+        Luna: require("../../assets/fonts/Luna.ttf")
     });
 
     Expo.SplashScreen.hide();

@@ -11,7 +11,7 @@ const BoardNavigator = createStackNavigator(
         initialRouteName: 'Board',
         navigationOptions: ({ navigation }) => {
             return ({
-                header: (props) => (navigation.state.index == undefined ? <MainHeader {...props} title='Board' /> : null)
+                header: (props) => (navigation.state.index == undefined ? <MainHeader {...props} title="See your rankings" /> : null)
             })
         },
     }

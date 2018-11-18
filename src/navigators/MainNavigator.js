@@ -25,17 +25,16 @@ export default createBottomTabNavigator(
                 const labelStyle = focused ? {
                     fontSize: 13,
                     textAlign: 'center',
-                    color: 'white'
+                    color: '#7F5F41'
                 } : {
                         fontSize: 9,
                         textAlign: 'center',
-                        color: '#eeeeee'
+                        color: '#7F5F41'
                     };
 
                 const viewStyle = {
                     justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: '#FF0129'
+                    alignItems: 'center'
                 }
                 let iconSource;
 
@@ -61,10 +60,10 @@ export default createBottomTabNavigator(
 
                 let iconStyle = focused ? {
                     fontSize: 29,
-                    color: 'white'
+                    color: '#7F5F41'
                 } : {
                         fontSize: 24,
-                        color: '#eeeeee',
+                        color: '#7F5F41',
                         textAlign: 'center'
                     };
                 return (
@@ -80,9 +79,9 @@ export default createBottomTabNavigator(
                 showLabel: false,
                 style: {
                     borderTopWidth: 1,
-                    borderTopColor: 'white',
+                    borderTopColor: '#7F5F41',
                     height: 55,
-                    backgroundColor: '#FF0129'
+                    backgroundColor: '#FFF9F2'
                 }
             },
     }
