@@ -21,29 +21,50 @@ export default createBottomTabNavigator(
         navigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused, horizontal, tintColor }) => {
                 const { routeName } = navigation.state;
-                const labelStyle = {
-                    fontSize: 11,
-                    textAlign: 'center',
-                    color: '#9B8C74'
-                }
 
-                let imgSource;
+                const labelStyle = focused ? {
+                    fontSize: 10,
+                    textAlign: 'center',
+                    color: '#FF0129'
+                } : {
+                        fontSize: 10,
+                        textAlign: 'center',
+                        color: '#676767'
+                    };
+
+                    const viewStyle = {
+                        justifyContent: 'center'
+                    }
+                let iconSource;
 
                 switch (routeName) {
                     case 'Home':
                         iconSource = 'home';
                         break;
+                    case 'Check':
+                        iconSource = 'check';
+                        break;
+                    case 'Play':
+                        iconSource = 'gamepad';
+                        break;
+                    case 'Board':
+                        iconSource = 'list';
+                        break;
+                    case 'Chat':
+                        iconSource = 'comments';
+                        break;  
+                    default:
+                        iconSource = 'home';
                 }
 
-                const iconStyle = focused ? {
-                    color: 'red'
+                let iconStyle = focused ? {
+                    color: '#FF0129'
                 } : {
-                        color: 'blue'
-                    }
-                return
-                (
-                    <View>
-                        <Icon type='FontAwesome' name={iconSource} style={iconStyle}></Icon>
+                        color: '#676767'
+                    };
+                return (
+                    <View style={viewStyle}>
+                        <Icon type="FontAwesome" name={iconSource} style={iconStyle} />
                         <Text style={labelStyle}>{routeName}</Text>
                     </View>
                 );
@@ -53,8 +74,8 @@ export default createBottomTabNavigator(
             {
                 showLabel: false,
                 style: {
-                    borderTopWidth: 0,
-                    elevation: 8,
+                    borderTopWidth: 1,
+                    borderTopColor: 'red',
                     height: 55
                 }
             },
