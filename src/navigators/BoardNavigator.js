@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Board from '../components/Board';
 import MainHeader from '../components/MainHeader';
 
@@ -9,7 +9,7 @@ const BoardNavigator = createStackNavigator(
     },
     {
         initialRouteName: 'Board',
-        navigationOptions: ({ navigation }) => {
+        defaultNavigationOptions: ({ navigation }) => {
             return ({
                 header: (props) => (navigation.state.index == undefined ? <MainHeader {...props} title="See your rankings" /> : null)
             })
@@ -18,7 +18,7 @@ const BoardNavigator = createStackNavigator(
 );
 
 /* Hides the tab bar when switching to another navigator */
-BoardNavigator.navigationOptions = ({ navigation }) => {
+BoardNavigator.defaultNavigationOptions = ({ navigation }) => {
     let tabBarVisible = true;
     if (navigation.state.index > 0) {
         tabBarVisible = false;
@@ -28,4 +28,4 @@ BoardNavigator.navigationOptions = ({ navigation }) => {
         tabBarVisible,
     };
 };
-export default BoardNavigator;
+export default createAppContainer(BoardNavigator);

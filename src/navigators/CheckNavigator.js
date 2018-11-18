@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Check from '../components/Check';
 import MainHeader from '../components/MainHeader';
 
@@ -9,7 +9,7 @@ const CheckNavigator = createStackNavigator(
     },
     {
         initialRouteName: 'Check',
-        navigationOptions: ({ navigation }) => {
+        defaultNavigationOptions: ({ navigation }) => {
             return ({
                 header: (props) => (navigation.state.index == undefined ? <MainHeader {...props} title='Check' /> : null)
             })
@@ -18,7 +18,7 @@ const CheckNavigator = createStackNavigator(
 );
 
 /* Hides the tab bar when switching to another navigator */
-CheckNavigator.navigationOptions = ({ navigation }) => {
+CheckNavigator.defaultNavigationOptions = ({ navigation }) => {
     let tabBarVisible = true;
     if (navigation.state.index > 0) {
         tabBarVisible = false;
@@ -28,4 +28,4 @@ CheckNavigator.navigationOptions = ({ navigation }) => {
         tabBarVisible,
     };
 };
-export default CheckNavigator;
+export default createAppContainer(CheckNavigator);

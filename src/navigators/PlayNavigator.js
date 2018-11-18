@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Play from '../components/Play';
 import MainHeader from '../components/MainHeader';
 
@@ -9,7 +9,7 @@ const PlayNavigator = createStackNavigator(
     },
     {
         initialRouteName: 'Play',
-        navigationOptions: ({ navigation }) => {
+        defaultNavigationOptions: ({ navigation }) => {
             return ({
                 header: (props) => (navigation.state.index == undefined ? <MainHeader {...props} title='Play' /> : null)
             })
@@ -18,7 +18,7 @@ const PlayNavigator = createStackNavigator(
 );
 
 /* Hides the tab bar when switching to another navigator */
-PlayNavigator.navigationOptions = ({ navigation }) => {
+PlayNavigator.defaultNavigationOptions = ({ navigation }) => {
     let tabBarVisible = true;
     if (navigation.state.index > 0) {
         tabBarVisible = false;
@@ -28,4 +28,4 @@ PlayNavigator.navigationOptions = ({ navigation }) => {
         tabBarVisible,
     };
 };
-export default PlayNavigator;
+export default createAppContainer(PlayNavigator);

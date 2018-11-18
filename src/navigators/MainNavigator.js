@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { Image, Text, View } from 'react-native';
 import { Icon } from 'native-base';
 
@@ -9,7 +9,7 @@ import PlayNavigator from './PlayNavigator';
 import BoardNavigator from './BoardNavigator';
 import ChatNavigator from './ChatNavigator';
 
-export default createBottomTabNavigator(
+const MainNavigator = createBottomTabNavigator(
     {
         Home: HomeNavigator,
         Check: CheckNavigator,
@@ -18,7 +18,7 @@ export default createBottomTabNavigator(
         Chat: ChatNavigator
     },
     {
-        navigationOptions: ({ navigation }) => ({
+        defaultNavigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused, horizontal, tintColor }) => {
                 const { routeName } = navigation.state;
 
@@ -86,3 +86,5 @@ export default createBottomTabNavigator(
             },
     }
 );
+
+export default createAppContainer(MainNavigator);
