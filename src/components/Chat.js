@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { GiftedChat } from 'react-native-gifted-chat'
+import { GiftedChat, Bubble } from 'react-native-gifted-chat'
 import messages from '../../data/messages';
 
 class Chat extends React.Component {
@@ -17,9 +17,23 @@ class Chat extends React.Component {
                     user={{
                         _id: 1,
                     }}
+                    renderBubble={this.renderBubble}
                 />
             </View >
         );
+    }
+
+    renderBubble(props) {
+        return (
+            <Bubble
+                {...props}
+                wrapperStyle={{
+                    right: {
+                        backgroundColor: '#E3CEAE'
+                    }
+                }}
+            />
+        )
     }
 }
 
