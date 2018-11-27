@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Platform, KeyboardAvoidingView } from 'react-native';
 import { GiftedChat, Bubble, Send } from 'react-native-gifted-chat'
-import messages from '../../data/messages';
 
 class Chat extends React.Component {
 
@@ -10,16 +9,21 @@ class Chat extends React.Component {
         const containerStyle = {
             flex: 1
         };
+
+        console.log(this.props.messages);
+
+        /* Messages appear to be displayed in reverse on Android, but not on iOS */
         return (
             <View style={containerStyle}>
                 <GiftedChat
-                    messages={messages.sort((a, b) => b._id - a._id)}
+                    messages={this.props.messages.reverse()}
                     user={{
                         _id: 1,
                     }}
                     renderBubble={this.renderBubble}
                     renderSend={this.renderSend}
                     isAnimated={true}
+                    onSend={messages => this.props.addMessage(messages[0])}
                 />
                 <KeyboardAvoidingView  behavior={'padding'} keyboardVerticalOffset={80}/>
             </View >

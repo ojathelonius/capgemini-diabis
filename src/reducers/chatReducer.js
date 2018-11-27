@@ -4,14 +4,10 @@ const initialState = {
 
 const appReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'REQUEST_MESSAGES':
-            return {
-                ...state
-            }
-        case 'RECEIVE_MESSAGES':
+        case 'ADD_MESSAGE':
             return {
                 ...state,
-                messages: action.payload.messages
+                messages: [...state.messages, action.payload]
             }
         default:
             return state

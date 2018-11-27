@@ -1,11 +1,11 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import Chat from '../components/Chat';
+import ChatContainer from '../containers/ChatContainer';
 import MainHeader from '../components/MainHeader';
 
 const ChatNavigator = createStackNavigator(
     {
-        Chat: Chat,
+        Chat: ChatContainer,
     },
     {
         initialRouteName: 'Chat',
