@@ -9,9 +9,7 @@ class Chat extends React.Component {
         const containerStyle = {
             flex: 1
         };
-
-        console.log(this.props.messages);
-
+        
         /* Messages appear to be displayed in reverse on Android, but not on iOS */
         return (
             <View style={containerStyle}>

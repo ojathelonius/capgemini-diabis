@@ -1,11 +1,11 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import Check from '../components/Check';
+import CheckContainer from '../containers/CheckContainer';
 import MainHeader from '../components/MainHeader';
 
 const CheckNavigator = createStackNavigator(
     {
-        Check: Check,
+        Check: CheckContainer,
     },
     {
         initialRouteName: 'Check',

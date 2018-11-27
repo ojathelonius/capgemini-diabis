@@ -3983,6 +3983,13 @@ react-native-maps@0.21.0:
     babel-plugin-module-resolver "^2.3.0"
     babel-preset-react-native "1.9.0"
 
+react-native-modalbox@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/react-native-modalbox/-/react-native-modalbox-1.6.0.tgz#ee353a2d568715a2b10db8eeb91132fb1f45952b"
+  dependencies:
+    create-react-class "^15.6.0"
+    prop-types "^15.5.10"
+
 react-native-parsed-text@^0.0.20:
   version "0.0.20"
   resolved "https://registry.yarnpkg.com/react-native-parsed-text/-/react-native-parsed-text-0.0.20.tgz#7bd35fec88c3ca0eb0e8250a98e24092b4ee7fef"

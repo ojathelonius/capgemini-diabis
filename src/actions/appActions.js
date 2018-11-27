@@ -8,6 +8,23 @@ export const resourcesLoaded = () => ({
     type: 'RESOURCES_LOADED'
 })
 
+export const toggleMeasureModal = () => ({
+    type: 'TOGGLE_MEASURE_MODAL'
+})
+
+export const toggleMealModal = () => ({
+    type: 'TOGGLE_MEAL_MODAL'
+})
+
+export const closeMeasureModal = () => ({
+    type: 'CLOSE_MEASURE_MODAL'
+})
+
+export const closeMealModal = () => ({
+    type: 'CLOSE_MEAL_MODAL'
+})
+
+
 export const loadResources = () => (async (dispatch) => {
 
     dispatch(startLoadingResources());
