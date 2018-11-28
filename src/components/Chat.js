@@ -21,7 +21,7 @@ class Chat extends React.Component {
                     renderBubble={this.renderBubble}
                     renderSend={this.renderSend}
                     isAnimated={true}
-                    onSend={messages => this.props.addMessage(messages[0])}
+                    onSend={messages => this.props.sendMessage(messages[0], this.props.context)}
                 />
                 <KeyboardAvoidingView  behavior={'padding'} keyboardVerticalOffset={80}/>
             </View >

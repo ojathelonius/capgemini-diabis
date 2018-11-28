@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
 import Chat from '../components/Chat';
-import { addMessage } from '../actions/chatActions';
+import { sendMessage } from '../actions/chatActions';
 
 const mapStateToProps = (state, ownProps) => ({
-    messages: state.chatReducer.messages
+    messages: state.chatReducer.messages,
+    context: state.chatReducer.context
+    
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    addMessage: (message) => dispatch(addMessage(message)),
+    sendMessage: (message, context) => dispatch(sendMessage(message, context)),
 });
 
 const ChatContainer = connect(
