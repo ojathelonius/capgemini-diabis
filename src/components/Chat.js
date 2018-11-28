@@ -14,7 +14,7 @@ class Chat extends React.Component {
         return (
             <View style={containerStyle}>
                 <GiftedChat
-                    messages={this.props.messages.reverse()}
+                    messages={this.props.messages.sort((a,b) => b.createdAt - a.createdAt)}
                     user={{
                         _id: 1,
                     }}

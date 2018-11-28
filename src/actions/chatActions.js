@@ -1,5 +1,6 @@
 import config from '../../config';
 import axios from 'axios';
+import uuidv1 from 'uuid/v1';
 
 export const addMessage = (message) => ({
     type: 'ADD_MESSAGE',
@@ -30,11 +31,14 @@ export const receiveMessage = (message) => ((dispatch) => {
     dispatch(updateContext(message.context));
 
     const chatMessage = {
+        _id: uuidv1(),
         text: message.output.text,
         createdAt: new Date(),
         user: {
             _id: 2,
-            name: 'Woopy'
+            name: 'Woopy',
+            avatar: require('../../assets/logo_chat.png')
+
         }
     }
 
