@@ -30,9 +30,13 @@ export const receiveMessage = (message) => ((dispatch) => {
 
     dispatch(updateContext(message.context));
 
+    const content = message.output.text.constructor === Array ?
+        message.output.text.map(sentence => sentence + '\n')
+        : message.output.text;
+
     const chatMessage = {
         _id: uuidv1(),
-        text: message.output.text,
+        text: content,
         createdAt: new Date(),
         user: {
             _id: 2,
