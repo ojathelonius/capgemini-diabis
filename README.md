@@ -1,4 +1,4 @@
-# Woopy - Capgemini Digital Insurer challenge
+# Woopy - Digital Insurer Hackathon (Capgemini)
 Woopy is a companion app that guides children through the best practices when it comes to treating diabetes.
 
 It transforms tedious, daily tasks such as blood sugar measuring into a fun game, thanks to its gamification system. Woopy is also a chatbot using IBM Watson to provide relevant answers.
