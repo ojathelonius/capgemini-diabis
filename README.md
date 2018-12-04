@@ -5,6 +5,8 @@ It transforms tedious, daily tasks such as blood sugar measuring into a fun game
 
 The repository for this chatbot is available [here](https://github.com/proust96/chatbot_back).
 
+This project won the **first prize** during the Capgemini Digital Insurer Hackathon, with a $3000 cashprize.
+
 
 ## Technical stack
 
